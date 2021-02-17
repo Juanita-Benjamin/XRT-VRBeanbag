@@ -4,5 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CornHole.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d818ff804476c984c9d1c9e601c2d63b,
+      type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 17f9561f75df8a746bef129c2c803a64,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: db39201b831c2234b9b3753c9e6356ab,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 4a295ac3bf5132d4ebf8111972ce6265,
+      type: 2}
