@@ -22,6 +22,7 @@ public class HitTrigger : MonoBehaviour
         if (other.CompareTag("BeanBag"))
         {
             ScoreController.Instance.HitHole();
+            Destroy(other.gameObject);
         }
         
     }

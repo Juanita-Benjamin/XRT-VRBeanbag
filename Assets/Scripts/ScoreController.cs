@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -15,7 +16,10 @@ public class ScoreController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public static ScoreController Instance => _instance;
 
-
+    public TextMeshProUGUI winText;
+    
+    [SerializeField]
+    private float countDown;
     private void Awake()
     {
         _instance = this;
@@ -24,23 +28,14 @@ public class ScoreController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        countDown = 3;
     }
 
     public void HitHole()
     {
         score++;
     }
-
-    public void HitBoard()
-    {
-        
-    }
-
-    public void MissBoard()
-    {
-        
-    }
+    
 
     public void ResetScore()
     {
@@ -50,6 +45,18 @@ public class ScoreController : MonoBehaviour
     void Update()
     {
         scoreText.text = score.ToString();
+        
+        if (score == 21)
+        {
+            winText.gameObject.SetActive(true);
+            countDown -= 1 * Time.deltaTime;
+        }
+
+        if (countDown <= 0)
+        {
+            winText.gameObject.SetActive(false);
+        }
+
     }
     
 }
